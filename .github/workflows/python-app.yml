@@ -29,7 +29,7 @@ jobs:
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     - name: Test with pytest
       run: |
-        pytest -v
+        pytest -v --junitxml=test-reports/report.xml --html=test-reports/report.html
 
     - name: Upload test reports
       uses: actions/upload-artifact@v3
@@ -38,9 +38,3 @@ jobs:
       with:
         name: test-reports
         path: test-reports
-
-    services:
-      headless:
-        image: browserless/chrome:latest
-        ports:
-          - 3000:3000
