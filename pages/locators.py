@@ -8,7 +8,8 @@ class MainPageLocators:
 
 
 class SearchPageLocators:
-    SEARCHING_RESULT = (By.XPATH, "//a[@class='Link Link_theme_outer Path-Item link path__item link organic__greenurl']")
+    ALL_SEARCHING_RESULT = (By.ID, 'search-result')
+    ORGANIC_SEARCHING_RESULT = (By.CLASS_NAME, "organic__greenurl")
 
 
 class ImagePageLocators:

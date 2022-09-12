@@ -18,4 +18,5 @@ def test_search_position(driver, link, query, index_search_result, expected_link
     main_page.press_enter_in_the_search_field()
     search_page = SearchPage(driver, link)
     assert search_page.should_be_searching_result()
+    search_page.get_link_to_search_result(index_search_result)
     assert search_page.get_link_to_search_result(index_search_result) == expected_link

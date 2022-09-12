@@ -8,10 +8,10 @@ from .locators import MainPageLocators
 
 
 class BasePage():
-    def __init__(self, driver: WebDriver, url, timeout=10):
+    def __init__(self, driver: WebDriver, url, timeout=4):
         self.driver = driver
         self.url = url
-        # self.driver.implicitly_wait(timeout)
+        self.driver.implicitly_wait(timeout)
 
     def open(self):
         self.driver.get(self.url)
