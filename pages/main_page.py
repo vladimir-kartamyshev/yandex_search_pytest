@@ -10,6 +10,7 @@ class MainPage(BasePage):
         return True
 
     def enter_request_in_the_search_field(self, request):
+        self.is_element_present(*MainPageLocators.SEARCH_FIELD)
         search_field = self.driver.find_element(*MainPageLocators.SEARCH_FIELD)
         search_field.send_keys(request)
 
